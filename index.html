@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Google Cache Link Generator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Add viewport meta tag for responsiveness -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- Include Font Awesome CSS -->
+    <style>
+        body {
+            text-align: center;
+            background: #232323;
+            color: #fff;
+            font-family: 'Caveat', cursive;
+            font-size: 16px;
+        }
+        .container {
+            background-color: rgba(0, 0, 0, 0.9);
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            width: 80%;
+            margin: 0 auto;
+        }
+        h1 {
+            font-family: 'Lobster', cursive;
+            color: #4CAF50; /* Stylish green title */
+        }
+        .search-bar {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            background: #333;
+            border-radius: 4px;
+            padding: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            margin: 20px 0;
+        }
+        .search-input {
+            flex: 1;
+            border: none;
+            background: transparent;
+            color: #fff;
+            font-size: 18px;
+            padding: 8px;
+            width: 100%; /* Take the full width on mobile */
+        }
+        .search-button {
+            background: none;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            font-size: 18px;
+            padding: 0;
+            margin: 0;
+        }
+        .search-button i {
+            background-color: #4CAF50; /* Stylish green button */
+            padding: 10px;
+            border-radius: 50%;
+            transition: background-color 0.2s;
+        }
+        .search-button i:hover {
+            background-color: #45a049; /* Slightly darker green on hover */
+        }
+        p {
+            font-size: 18px;
+            color: #fff; /* Bright text */
+        }
+        a {
+            color: #fff; /* White link text */
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .social-icons {
+            margin-top: 20px;
+        }
+        .social-icons a {
+            display: inline-block;
+            margin: 0 10px;
+            font-size: 24px;
+            color: #fff; /* White social media icons */
+            text-decoration: none;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Caveat&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Google Cache Link Generator</h1>
+        <div class="search-bar">
+            <input type="text" id="externalLink" class="search-input" placeholder="https://example.com" onkeyup="if (event.key === 'Enter') generateCacheLink()">
+            <button class="search-button" onclick="generateCacheLink()"><i class="fa fa-search"></i></button>
+        </div>
+        <p id="cacheLink"></p>
+    </div>
+    <div class="social-icons">
+        <!-- Use font awesome icons for social media with links to open in a new tab -->
+        <a href="https://www.linkedin.com/in/adityabhat0705" target="_blank" class="fa fa-linkedin"></a>
+        <a href="https://github.com/adikalli" target="_blank" class="fa fa-github"></a>
+        <a href="https://instagram.com/thisisadi__" target="_blank" class="fa fa-instagram"></a>
+        <a href="https://x.com/adithya0705?s=09" target="_blank" class="fa fa-twitter"></a>
+        <!-- Add more social media buttons as needed -->
+    </div>
+
+    <script>
+        function generateCacheLink() {
+            var externalLink = document.getElementById("externalLink").value;
+            var cacheLink = "https://webcache.googleusercontent.com/search?q=cache:" + externalLink;
+            document.getElementById("cacheLink").innerHTML = '<a href="' + cacheLink + '" target="_blank">Here is your link</a>';
+        }
+    </script>
+</body>
+</html>
