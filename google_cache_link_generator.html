@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Google Cache Link Generator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Add viewport meta tag for responsiveness -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- Include Font Awesome CSS -->
     <style>
         body {
@@ -25,6 +26,7 @@
         }
         .search-bar {
             display: flex;
+            flex-direction: row;
             align-items: center;
             background: #333;
             border-radius: 4px;
@@ -39,19 +41,24 @@
             color: #fff;
             font-size: 18px;
             padding: 8px;
+            width: 100%; /* Take the full width on mobile */
         }
         .search-button {
-            background-color: #4CAF50; /* Stylish green button */
-            color: white;
+            background: none;
             border: none;
-            border-radius: 4px;
+            color: #fff;
             cursor: pointer;
             font-size: 18px;
-            padding: 10px 20px;
-            margin-left: 10px;
+            padding: 0;
+            margin: 0;
+        }
+        .search-button i {
+            background-color: #4CAF50; /* Stylish green button */
+            padding: 10px;
+            border-radius: 50%;
             transition: background-color 0.2s;
         }
-        .search-button:hover {
+        .search-button i:hover {
             background-color: #45a049; /* Slightly darker green on hover */
         }
         p {
@@ -72,7 +79,8 @@
             display: inline-block;
             margin: 0 10px;
             font-size: 24px;
-            text-decoration: none; /* Remove underline */
+            color: #fff; /* White social media icons */
+            text-decoration: none;
         }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Caveat&display=swap" rel="stylesheet">
@@ -82,12 +90,12 @@
         <h1>Google Cache Link Generator</h1>
         <div class="search-bar">
             <input type="text" id="externalLink" class="search-input" placeholder="https://example.com" onkeyup="if (event.key === 'Enter') generateCacheLink()">
-            <button class="search-button" onclick="generateCacheLink()">Generate</button>
+            <button class="search-button" onclick="generateCacheLink()"><i class="fa fa-search"></i></button>
         </div>
         <p id="cacheLink"></p>
     </div>
     <div class="social-icons">
-        <!-- Add font awesome icons for social media without changing their color -->
+        <!-- Use font awesome icons for social media with links to open in a new tab -->
         <a href="https://www.linkedin.com/in/adityabhat0705" target="_blank" class="fa fa-linkedin"></a>
         <a href="https://github.com/adikalli" target="_blank" class="fa fa-github"></a>
         <a href="https://instagram.com/thisisadi__" target="_blank" class="fa fa-instagram"></a>
